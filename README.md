@@ -14,3 +14,7 @@ The program provides two ways to use it:
 This is an example output of using mode 1:
 
 ![Screenshot 2023-12-15 172521](https://github.com/m7m49/Number-System-Converter/assets/76563254/578d4b36-25f0-49e3-978e-6fc63b0d0e2c)
+
+This is an example output of using mode 2:
+
+![Screenshot 2023-12-15 173707](https://github.com/m7m49/Number-System-Converter/assets/76563254/681d23ba-47b2-4703-a13d-5825772ccb46)
