@@ -182,7 +182,7 @@ public class Main
         //This works when the answer is correct and the user didn't 
         //request from the program to give him the answer.
         if (!answerIsGiven && !giveUp) {
-            System.out.println("GOOD JOB!");
+            System.out.println("GOOD JOB!\n");
         } 
     }
     
