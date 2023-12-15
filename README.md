@@ -19,4 +19,4 @@ This is an example output of using mode 2:
 
 ![Screenshot 2023-12-15 173707](https://github.com/m7m49/Number-System-Converter/assets/76563254/681d23ba-47b2-4703-a13d-5825772ccb46)
 
-__NOTE: If the screenshots do not load, use any VPN.__
+__NOTE: If the screenshots do not load, use a VPN.__
