@@ -156,7 +156,7 @@ public class Main
                 //A suggestion to give the answer each 3 faild tries:
                 if (rep % 3 == 0 && rep > 0) {
             
-                    System.out.println("Do you want to know the right answer? ");
+                    System.out.println("Do you want to know the answer? ");
                     
                     String ans = in.nextLine();
                     
