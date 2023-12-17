@@ -21,6 +21,16 @@ public class Main
         return system;
     }
     
+    public static int validateMode(int mode) {
+        while (mode != 1 && mode != 2) {
+            System.out.println("Enter a valid mode number, please.\n");
+            mode = in.nextInt();
+            
+        }
+        
+        return mode;
+    }
+    
     public static void mode_1() {
         System.out.println("What is the number system of your number? ");
         int toConvertSys = validateSystem(in.nextInt());
@@ -56,7 +66,7 @@ public class Main
         
         System.out.println("To any number system you want to convert this number?");
         
-        specs[2] = in.nextInt();
+        specs[2] = validateSystem(in.nextInt());
         
         return specs;
     }
@@ -206,47 +216,50 @@ public class Main
             checkAnswer(correctAnswer, userAnswer);
         }    
     }
+    
 	public static void main(String[] args) {
 	    
-	    //I will use this variable to ask the user if he wants to do another conversion.
-	    String again = "yes";
-	 
-	    while (again.toLowerCase().equals("yes")) {
-	        System.out.println("1 Do you want to enter the number you want to convert\n" +
-	                           "2 or you want to give you a random number?\n" +
-	                           "Enter 1 or 2: ");
-	        
-            try {
-                
-                int mode = in.nextInt();
-                
-                if (mode == 1) mode_1();
-                
-                else {
-                    System.out.println("How many numbers you want to convert?\n ");
-                    try {
+	    //This variable is for asking the user if he wants to do another conversion.
+    	String again = "yes";
+    	
+    	//This while loop is for restart the program in case of occuring an exception.
+    	//If there is no exceptions, the break statement will stop this loop.
+	    while (true) {
+	    
+    	    while (again.toLowerCase().equals("yes")) {
+    	        System.out.println("1 Do you want to enter the number you want to convert\n" +
+    	                           "2 or you want to give you a random number?\n" +
+        	                           "Enter 1 or 2: ");
+        	    try {
+        	        int mode = validateMode(in.nextInt());
+                    if (mode == 1) mode_1();
+                    else {
+                        System.out.println("How many numbers you want to convert?\n ");
+                            
                         int reps = in.nextInt();
-                        try {
-                            mode_2(reps);
-                                
-                        } catch(Exception e) {
-                            System.out.println("The random number you want to get is so big! Please, try again.\n");
-                        }    
-                        
-                    } catch(Exception e) {
-                        System.out.println("The number you entered is so big! Please, try again.\n");
-                    }
-                }    
+                        mode_2(reps);
+                    } 
+        	    } catch (NumberFormatException e) {
+        	        System.out.println("The random number you want to get or the number" +
+                                       " you entered is so big! Please, try again.\n");
+        	    } catch (InputMismatchException e) {
+        	        System.out.println("Please enter a valid number.");
+        	    }
+        	    
+        	    //Time interval:
+        	    try {TimeUnit.SECONDS.sleep(1);} catch(Exception e){};
                 
-            } catch(Exception e) {
-                System.out.println("The number you entered is so big! Please, try again.\n");
-            }  
-                     
-            try {TimeUnit.SECONDS.sleep(1);} catch(Exception e){};
-            System.out.println("Do you want to continue? ");
-            
-            //Yes or No:
-            again = in.next();
-        }
+                System.out.println("Do you want to continue?\n");
+                
+                //This is just for escaping "the newline character issue"
+                //that might occur in some cases.
+                in.nextLine();
+                
+                //Yes or No:
+                again = in.nextLine();
+        	     
+            }
+            break;
+	    }
 	}    
 }
