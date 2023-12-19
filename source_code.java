@@ -24,10 +24,8 @@ public class Main
     public static int validateMode(int mode) {
         while (mode != 1 && mode != 2) {
             System.out.println("Enter a valid mode number, please.\n");
-            mode = in.nextInt();
-            
+            mode = in.nextInt();  
         }
-        
         return mode;
     }
     
@@ -49,10 +47,10 @@ public class Main
     //number from the user.
     public static int[] getSpecs() {
         
-        //this array will contain the, respectively:
+        //This array will contain, respectively:
         // * the number system of the number to convert.
         // * the desired length of the number to convert.
-        // * the number system the user want to convert to.
+        // * the number system the user wants to convert to.
         
         int specs[] = new int[3];
         
@@ -163,7 +161,7 @@ public class Main
                 //means that the answer is not correct.
                 if (rep > 0) System.out.println("Your answer isn't correct, please try again: ");
                 
-                //A suggestion to give the answer each 3 faild tries:
+                //A suggestion of answering each 3 failed tries:
                 if (rep % 3 == 0 && rep > 0) {
             
                     System.out.println("Do you want to know the answer? ");
@@ -178,8 +176,7 @@ public class Main
                         
                     } else {
                         System.out.println("Okay, as you want. If you want to know the answer" +
-                                            " just enter \"I gave up\". \nKeep going!");
-                        
+                                            " just enter \"I gave up\". \nKeep going!"); 
                     }
                 }
             }
@@ -222,44 +219,42 @@ public class Main
 	    //This variable is for asking the user if he wants to do another conversion.
     	String again = "yes";
     	
-    	//This while loop is for restart the program in case of occuring an exception.
-    	//If there is no exceptions, the break statement will stop this loop.
+    	//This while loop is for restarting the program in case of occuring an exception.
+    	//If there are no exceptions, the break statement will stop this loop.
 	    while (true) {
-	    
-    	    while (again.toLowerCase().equals("yes")) {
-    	        System.out.println("1 Do you want to enter the number you want to convert\n" +
-    	                           "2 or you want to give you a random number?\n" +
-        	                           "Enter 1 or 2: ");
-        	    try {
-        	        int mode = validateMode(in.nextInt());
-                    if (mode == 1) mode_1();
-                    else {
-                        System.out.println("How many numbers you want to convert?\n ");
-                            
-                        int reps = in.nextInt();
-                        mode_2(reps);
-                    } 
-        	    } catch (NumberFormatException e) {
-        	        System.out.println("The random number you want to get or the number" +
-                                       " you entered is so big! Please, try again.\n");
-        	    } catch (InputMismatchException e) {
-        	        System.out.println("Please enter a valid number.");
-        	    }
-        	    
-        	    //Time interval:
-        	    try {TimeUnit.SECONDS.sleep(1);} catch(Exception e){};
-                
-                System.out.println("Do you want to continue?\n");
-                
-                //This is just for escaping "the newline character issue"
-                //that might occur in some cases.
-                in.nextLine();
-                
-                //Yes or No:
-                again = in.nextLine();
-        	     
-            }
-            break;
+	    	    while (again.toLowerCase().equals("yes")) {
+	    	            System.out.println("1 Do you want to enter the number you want to convert\n" +
+	    	                           "2 or you want me to give you a random number?\n" +
+	        	                   "Enter 1 or 2: ");
+	        	    try {
+	        	        int mode = validateMode(in.nextInt());
+		                if (mode == 1) mode_1();
+		                else {
+		                    System.out.println("How many numbers you want to convert?\n ");
+		                            
+				    int reps = in.nextInt();
+				    mode_2(reps);
+	                        } 
+	        	    } catch (NumberFormatException e) {
+	        	        System.out.println("The random number you want to get or the number" +
+	                                       " you entered is so big! Please, try again.\n");
+	        	    } catch (InputMismatchException e) {
+	        	        System.out.println("Please enter a valid number.");
+	        	    }
+	        	    
+	        	    //Time interval:
+	        	    try {TimeUnit.SECONDS.sleep(1);} catch(Exception e){};
+	                
+	                    System.out.println("Do you want to continue?\n");
+	                
+	                    //This is just for escaping "the newline character issue"
+	                    //that might occur in some cases.
+	                    in.nextLine();
+	                
+	                    //Yes or No:
+	                    again = in.nextLine();   
+	            }
+	            break;
 	    }
 	}    
 }
