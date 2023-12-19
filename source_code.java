@@ -223,9 +223,9 @@ public class Main
     	//If there are no exceptions, the break statement will stop this loop.
 	    while (true) {
 	    	    while (again.toLowerCase().equals("yes")) {
-	    	            System.out.println("1 Do you want to enter the number you want to convert\n" +
-	    	                           "2 or you want me to give you a random number?\n" +
-	        	                   "Enter 1 or 2: ");
+	    	            System.out.println("1 Converting a given number.\n" +
+	    	                           "2 Giving a random number to convert (as an exercise).\n" +
+	        	                   "Choose 1 or 2: ");
 	        	    try {
 	        	        int mode = validateMode(in.nextInt());
 		                if (mode == 1) mode_1();
